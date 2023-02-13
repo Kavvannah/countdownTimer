@@ -4,7 +4,14 @@ function countDown() {
     const newDate = new Date(newBeginnings);
     const currentDate = new Date();
 
-    console.log(newDate - currentDate);
+    const totalSeconds = (newDate - currentDate) / 1000;
+
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const mins = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
+
+    console.log(days, hours, mins, seconds);
 }
 
 countDown();
