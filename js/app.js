@@ -1,3 +1,10 @@
+const daysEl = document.querySelector('#days');
+const hoursEl = document.querySelector('#hours');
+const minsEl = document.querySelector('#minutes');
+const secondsEl = document.querySelector('#seconds');
+
+console.log(daysEl);
+
 const newBeginnings = '04 June 2023';
 
 function countDown() {
@@ -11,9 +18,13 @@ function countDown() {
     const mins = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds) % 60;
 
-    console.log(days, hours, mins, seconds);
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minsEl.innerHTML = mins;
+    secondsEl.innerHTML = seconds;
 }
 
 countDown();
 
 setInterval(countDown, 1000);//1 sec
+
